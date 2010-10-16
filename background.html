@@ -11,8 +11,10 @@
                     icon.fillStyle = "rgba(241, 178, 21, 0.7)";
                     icon.strokeStyle = "rgba(241, 178, 21, 0.7)";
                     icon.beginPath();
+                    var startAngle = (Math.PI*3.78)/2;
+                    var endAngle = Math.PI+(Math.PI*3.44)/2;
                     //arc(x, y, radius, startAngle, endAngle, anticlockwise)
-                    icon.arc(10,10,7,0,360,true);
+                    icon.arc(10,10,8,startAngle,endAngle,true);
                     icon.closePath();
                     icon.stroke();
                     icon.fill();
@@ -21,8 +23,8 @@
                     icon.strokeStyle = "rgba(2, 93, 198, 1)";
                     icon.fillStyle = "rgba(2, 93, 198, 0.9)";
                     icon.fillText("✪", 2, 17);
-                    
 
+                    
                     chrome.browserAction.setIcon({"imageData": icon.getImageData(0, 0, 19, 19)});
                 }
             }
