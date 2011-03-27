@@ -1,0 +1,15 @@
+/* 
+    Created on : Mar 27, 2011
+    Author     : codexico
+    Description:
+        popup theme
+*/
+body{
+    font-size: 20px;
+}
+header .instructions{
+    margin-top: 0;
+    padding: 0 10px 10px;
+    text-align: right;
+    font-size: 14px;
+}
