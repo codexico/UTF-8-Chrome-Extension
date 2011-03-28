@@ -48,3 +48,46 @@ header .instructions{
 .tabs section.current div {
     display: block;
 }
+section div span {
+    float: left;
+}
+section div span:before {
+    content:attr(data-name) "  hex: " attr(data-hex) "  entity: " attr(data-entity);
+    display: none;
+}
+section div span:hover::before {
+    width: 140px;
+    display: inline-block;
+    background-color: black;
+    border-radius: 12px;
+    padding: 4px 6px;
+    margin: 26px 0 0 6px;
+    font-size: 12px;
+    color: #eee;
+    z-index: 10;
+    position: absolute;
+    cursor: pointer;
+}
+section div span:hover {
+    z-index: 10;
+    position: relative;
+}
+
+/* creates triangle */
+section div span:after{
+	z-index:9;
+	position:absolute;
+	content:"\00a0";
+	display:none;
+	width:0;
+	height:0;
+	border-style:solid;
+	top:4px;
+	left:8px;
+	border-width:15px 9px 13px 4px;
+	border-color:transparent transparent black;
+}
+
+section div span:hover::after{
+	display:block;
+}
