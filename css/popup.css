@@ -7,9 +7,44 @@
 body{
     font-size: 20px;
 }
+main {
+    padding-bottom: 10px;
+}
 header .instructions{
     margin-top: 0;
     padding: 0 10px 10px;
     text-align: right;
     font-size: 14px;
+}
+.tabs {
+    width: 400px;
+    position: relative;
+}
+.tabs section {
+    float: left;
+}
+.tabs section h1 {
+    margin: 0 1px 0 0;
+    background: #d9d9d9;
+    padding: 3px 10px;
+    font: bold 12px Arial;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+}
+
+.tabs section.current h1 {
+    background: #eee;
+    cursor: default;
+}
+
+.tabs section div {
+    position: absolute;
+    left: 0;
+    background: #eee;
+    display: none;
+    padding: 6px 12px;
+}
+
+.tabs section.current div {
+    display: block;
 }
