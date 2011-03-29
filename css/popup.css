@@ -59,6 +59,7 @@ header .instructions{
     border-bottom: 6px solid #fff;/*unica maneira q consegui de fazer uma margem*/
     display: none;
     padding: 6px 12px;
+    letter-spacing: 2px;
 }
 
 .tabs section.current div {
@@ -74,12 +75,13 @@ section div span:before {
 section div span:hover::before {
     width: 140px;
     display: inline-block;
-    background-color: black;
+    background-color: #f9f9ff;
+    border: 6px solid #ccf;
     border-radius: 12px;
     padding: 4px 6px;
-    margin: 26px 0 0 6px;
+    margin: 33px 0 0 -4px;
     font-size: 12px;
-    color: #eee;
+    color: #333;
     z-index: 10;
     position: absolute;
     cursor: pointer;
@@ -97,11 +99,11 @@ section div span:after{
 	display:none;
 	width:0;
 	height:0;
+	top:11px;
+	left:4px;
+	border-width:11px 23px 17px 0px;
+	border-color:transparent transparent #ccf;
 	border-style:solid;
-	top:4px;
-	left:8px;
-	border-width:15px 9px 13px 4px;
-	border-color:transparent transparent black;
 }
 
 section div span:hover::after{
