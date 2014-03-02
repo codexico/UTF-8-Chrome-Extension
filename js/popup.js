@@ -1,3 +1,29 @@
+// http://developer.chrome.com/extensions/examples/tutorials/analytics/popup.js
+var _AnalyticsCode = 'UA-48518492-1';
+
+/**
+ * Below is a modified version of the Google Analytics asynchronous tracking
+ * code snippet.  It has been modified to pull the HTTPS version of ga.js
+ * instead of the default HTTP version.  It is recommended that you use this
+ * snippet instead of the standard tracking snippet provided when setting up
+ * a Google Analytics account.
+ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', _AnalyticsCode]);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = 'https://ssl.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(ga, s);
+})();
+
+
+
+
 function getUrl(url, success, fail, error) {
   var resp = '';
   var request = new XMLHttpRequest();
@@ -42,6 +68,8 @@ function loadChars (group) {
 function onClickGroup (event) {
   event.target.removeEventListener('click', onClickGroup);
   loadChars(event.target.parentNode.id);
+
+  _gaq.push(['_trackEvent', event.target.parentNode.id, 'clicked']);
 }
 
 function initListeners () {
@@ -52,8 +80,9 @@ function initListeners () {
   }
 }
 
-(function init () {
+
+document.addEventListener('DOMContentLoaded', function () {
   loadChars('fun');
 
   initListeners();
-}());
+});
