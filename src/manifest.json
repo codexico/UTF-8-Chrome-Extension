@@ -1,0 +1,12 @@
+{
+  "name": "utf-8 and unicode characters",
+  "short_name": "utf-8",
+  "version": "3.1",
+  "description": "utf-8 characters",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "unicode chars",
+    "default_popup": "popup.html",
+    "default_icon": "icon128-96.png"
+  }
+}
